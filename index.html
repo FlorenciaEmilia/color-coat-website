@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Coat Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d0d624b013.js" crossorigin="anonymous"></script>
+    <link rel='icon' href='./images/favicon (1).ico' type='image/x-icon'/ >
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <img id="logo" src="./images/ColorCoatFBProfilePic.jpg" alt="Color Coat Pro">
+        </div>
+
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+
+
+        <div class="nav-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Experience</a></li>
+                <li><a href="#contact" class='button'>Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div id="intro">
+            <h1>Best Service, at Best Price</h1>
+            <p>Color Coat Pro is always committed to offer the best quality service that fits your needs without making you break your bank account.  </p>
+            
+            <a href="#contact" class='button'>Contact Us</a>
+        </div>
+
+        <div id="intro-img">
+            <!-- <img src="images/img-dktp.jpg"> -->
+        </div>
+        
+
+    </section>
+
+    <section id="about">
+        <div class='hr-container'>
+            <div class='hr'></div>
+        </div>
+        
+        <h2>Who we are</h2>
+        <div class="blog">
+            <div>
+                <img src="./images/photo-1505798577917-a65157d3320a.jpeg" alt="Man Working">
+                <h3>Family Company</h3>
+                <p>Our principles comes from our roots and we keep offering A+ service since the past generation.</p>
+            </div>
+
+            <div>
+                <img src="./images/photo-1516962080544-eac695c93791.jpeg" alt="Paint Brush">
+                <h3>Honest & Reliable</h3>
+                <p>Our clients trust us their most valuable projects and hopes. Always delivering on time with perfectionism.</p>
+            </div>
+
+            <div>
+                <img src="./images/photo-1484154218962-a197022b5858.jpeg" alt="Kitchen Remodelation">
+                <h3>Versatile</h3>
+                <p>We do not only do paint. We also take ownership in completing remodelation and landscape projects. You name it, we do it!</p>
+            </div>
+
+            <div>
+                <img src="./images/photo-1543525324-9146d43c2a4e.jpeg" alt="Man Working">
+                <h3>Budget Friendly</h3>
+                <p>Color Coat Pro offers the best service in town and our prices are unbeatable. </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class='carousel-text'>
+            <div class='hr-container'>
+                <div class='hr' id='carousel-hr'></div>
+            </div>
+            <h2>Some of our past projects</h2>
+        </div>
+
+        <div class="carousel-container desktop-slider">
+            <i class="fas fa-arrow-left prevBtn"></i>
+            <i class="fas fa-arrow-right nextBtn"></i>
+            <div class="carousel-slide">
+                <img src="./images/photo-1560184897-67f4a3f9a7fa.jpeg" class="lastClone" alt="">
+                <img src="./images/photo-1560184897-ae75f418493e.jpeg" alt="">
+                <img src="./images/photo-1494526585095-c41746248156.jpeg" alt="">
+                <img src="./images/photo-1507089947368-19c1da9775ae.jpeg" alt="">
+                <img src="./images/photo-1574118139440-94aef80059b5.jpeg" alt="">
+                <img src="./images/photo-1560184897-67f4a3f9a7fa.jpeg" alt="">
+                <img src="./images/photo-1560184897-ae75f418493e.jpeg" class="firstClone" alt="">
+            </div>
+        </div>
+
+        <div class="carousel-container mobil-slider">
+            <i class="fas fa-arrow-left prevBtn"></i>
+            <i class="fas fa-arrow-right nextBtn"></i>
+            <div class="carousel-slide-m">
+                <img src="./images/m5.jpeg" class="lastClone" alt="">
+                <img src="./images/m1.jpeg" alt="">
+                <img src="./images/m2.jpeg" alt="">
+                <img src="./images/m3.jpeg" alt="">
+                <img src="./images/m4.jpeg" alt="">
+                <img src="./images/m5.jpeg" alt="">
+                <img src="./images/m1.jpeg" class="firstClone" alt="">
+            </div>
+        </div>
+
+        
+   
+    </section>
+
+    <section id="contact">
+        <div id="contact-form">
+        <div class='hr'></div>
+        <h2>Contact Us</h2>
+        <div id='form'>
+            <form action="mailto:flxrenciaemilia@gmail.com" method="post" enctype="text/plain" class="form-example">
+                <div class="form">
+                  <label for="name">Enter your name: </label>
+                  <input type="text" name="name" id="name" required>
+                </div>
+                <div class="form">
+                  <label for="email">Enter your email: </label>
+                  <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form">
+                    <label for="message">Write your message: </label>
+                    <textarea rows="15" cols="80" id="message"></textarea>
+                    <!-- <input type="text" name="message" id="message" required> -->
+                  </div>
+                <div class="form">
+                  <input type="submit" class="button" value="Get in touch!">
+                </div>
+              </form>
+        </div>
+    </div>
+    </section>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
