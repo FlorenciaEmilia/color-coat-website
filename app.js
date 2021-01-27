@@ -1,115 +1,54 @@
-// //----------Hamburger menu
-// const toggleButton = document.getElementsByClassName('toggle-button')[0];
-// const navbarLinks = document.getElementsByClassName('nav-links')[0];
+const status = document.querySelector("#status");
 
-// toggleButton.addEventListener('click', () => {
-// 	navbarLinks.classList.toggle('active');
-// });
+window.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("page-form");
 
-// //----------Carousel Slider
-// // const carouselSlide = document.querySelector('.carousel-slide');
-// const carouselSlide = document.querySelector('.carousel-slide');
-// const carouselSlideM = document.querySelector('.carousel-slide-m');
+  // Success and Error functions for after the form is submitted
 
-// const carouselImages = document.querySelectorAll('.carousel-slide img');
-// const carouselImagesM = document.querySelectorAll('.carousel-slide-m img');
+  function remover(element) {
+    element.innerHTML = "";
+    element.style.animation = "none";
+    element.classList = "";
+    window.requestAnimationFrame(function () {
+      element.style.animation = "status 4s ease forwards";
+    });
+  }
+  function success() {
+    form.reset();
+    remover(status);
+    status.classList.add("success", "status");
+    status.innerHTML = "Thanks!";
+  }
 
-// //Buttons
-// // const prevBtn = document.querySelector('.prevBtn');
-// // const nextBtn = document.querySelector('.nextBtn');
+  function error() {
+    remover(status);
+    status.classList.add("error", "status");
+    status.innerHTML = "Oops! There was a problem.";
+  }
 
-// const prevBtn = document.querySelectorAll('.prevBtn');
-// const nextBtn = document.querySelectorAll('.nextBtn');
+  // handle the form submission event
 
-// //Counter
-// let counter = 1;
-// const size = carouselImages[0].clientWidth;
-// //new
-// const sizeM = carouselImagesM[0].clientWidth;
-// let time = 3000;
-// let slider;
+  form.addEventListener("submit", function (ev) {
+    console.log("fired");
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+  });
+});
 
-// carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// carouselSlideM.style.transform = 'translateX(' + -sizeM * counter + 'px)';
+// helper function for sending an AJAX request
 
-// //Button Listener
-// nextBtn.forEach((x) =>
-// 	x.addEventListener('click', () => {
-// 		if (counter >= carouselImages.length - 1) {
-// 			return;
-// 		}
-// 		carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-// 		carouselSlideM.style.transition = 'transform 0.4s ease-in-out';
-// 		counter++;
-// 		carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// 		carouselSlideM.style.transform = 'translateX(' + -sizeM * counter + 'px)';
-// 	})
-// );
-
-// // nextBtn.addEventListener('click', () => {
-// // 	if (counter >= carouselImages.length - 1) {
-// // 		return;
-// // 	}
-// // 	carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-// // 	counter++;
-// // 	carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// // });
-
-// prevBtn.forEach((x) => {
-// 	x.addEventListener('click', () => {
-// 		if (counter <= 0) {
-// 			return;
-// 		}
-// 		carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-// 		carouselSlideM.style.transition = 'transform 0.4s ease-in-out';
-// 		counter--;
-// 		carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// 		carouselSlideM.style.transform = 'translateX(' + -sizeM * counter + 'px)';
-// 	});
-// });
-// // prevBtn.addEventListener('click', () => {
-// // 	if (counter <= 0) {
-// // 		return;
-// // 	}
-// // 	carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-// // 	counter--;
-// // 	carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// // });
-// function transitionCheck() {
-// 	if (carouselImages[counter].classList.contains('lastClone')) {
-// 		// carouselSlide.style.transition = 'none';
-// 		carouselSlide.style.transition = 'none';
-// 		carouselSlideM.style.transition = 'none';
-// 		counter = carouselImages.length - 2;
-// 		// carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// 		carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// 		carouselSlideM.style.transform = 'translateX(' + -sizeM * counter + 'px)';
-// 	}
-
-// 	if (carouselImages[counter].classList.contains('firstClone')) {
-// 		// carouselSlide.style.transition = 'none';
-// 		carouselSlide.style.transition = 'none';
-// 		carouselSlideM.style.transition = 'none';
-// 		counter = carouselImages.length - counter;
-// 		// carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// 		carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// 		carouselSlideM.style.transform = 'translateX(' + -sizeM * counter + 'px)';
-// 	}
-// }
-
-// // function transitionCheck() {
-// // 	if (carouselImages[counter].id === 'lastClone') {
-// // 		carouselSlide.style.transition = 'none';
-// // 		counter = carouselImages.length - 2;
-// // 		carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// // 	}
-
-// // 	if (carouselImages[counter].id === 'firstClone') {
-// // 		carouselSlide.style.transition = 'none';
-// // 		counter = carouselImages.length - counter;
-// // 		carouselSlide.style.transform = 'translateX(' + -size * counter + 'px)';
-// // 	}
-// // }
-
-// carouselSlide.addEventListener('transitionend', transitionCheck);
-// carouselSlideM.addEventListener('transitionend', transitionCheck);
+function ajax(method, url, data, success, error) {
+  var xhr = new XMLHttpRequest();
+  xhr.open(method, url);
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    if (xhr.status === 200) {
+      success(xhr.response, xhr.responseType);
+    } else {
+      error(xhr.status, xhr.response, xhr.responseType);
+    }
+  };
+  xhr.send(data);
+}
