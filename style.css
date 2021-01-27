@@ -34,8 +34,8 @@ html {
 .jumbotron {
   background-image: url("./Pictures/im3rd-media-YY139ZX_Zas-unsplash.jpg");
   background-size: cover;
-  height: 100vh;
-  background-attachment: fixed;
+  min-height: 80vh;
+  /* background-attachment: fixed; */
 }
 
 /* About */
@@ -63,7 +63,7 @@ html {
 
 /* Services*/
 #services {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +73,7 @@ html {
 }
 #services ul {
   list-style: none;
-  font-size: 2em;
+  font-size: 1.2em;
   font-weight: lighter;
 }
 
@@ -89,7 +89,10 @@ html {
 #references {
   min-height: 100vh;
 }
-
+.card-group img {
+  object-fit: cover;
+  max-height: 500px;
+}
 /* Reviews */
 #reviews {
   min-height: 100vh;
@@ -110,10 +113,19 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: var(--cyan);
+}
+
+#estimate h2 {
+  color: var(--light);
+}
+
+#form {
+  min-width: 50vw;
 }
 
 .contact-container {
-  max-width: 500px;
+  /* max-width: 500px; */
   margin: 0 auto;
   padding: 20px;
   background-color: white;
@@ -141,7 +153,9 @@ textarea {
 
 button[type="submit"] {
   width: 100%;
-  border: none;
+  border: 1px solid var(--cyan);
+  background-color: var(--light);
+  color: var(--cyan);
   outline: none;
   padding: 20px;
   font-size: 24px;
@@ -153,7 +167,8 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  color: var(--cyan);
+  background-color: var(--cyan);
+  color: var(--light);
 }
 
 #status {
@@ -195,4 +210,85 @@ button[type="submit"]:hover {
     pointer-events: none;
   }
 }
+
+/* Footer */
+#footer-bucket {
+  opacity: 0.5;
+  max-width: 35%;
+  align-self: center;
+}
+
 /* Media Queries */
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    font-size: 2em;
+  }
+
+  .jumbotron,
+  #about {
+    min-height: 50vh;
+  }
+
+  /* About */
+  #about img {
+    display: none;
+  }
+
+  /* Reasons */
+  #reasons h2 {
+    margin: 1em 0 0 0 !important;
+  }
+  #reasons div {
+    flex-direction: column;
+  }
+  #reasons div div {
+    margin: 1em 0;
+  }
+
+  #reasons h4 {
+    font-size: 2em;
+  }
+
+  /* Services */
+  #services {
+    min-height: 60vh;
+  }
+
+  #services div {
+    flex-direction: column;
+    font-size: smaller;
+  }
+
+  #services div button {
+    font-size: smaller;
+  }
+
+  /* References */
+  .card-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-group h5 {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .card-group .card-text {
+    display: none;
+  }
+
+  /* Estimate */
+  #estimate {
+    min-height: 70vh;
+    background-color: var(--light);
+    color: var(--cyan);
+  }
+
+  #estimate h2 {
+    color: var(--cyan);
+  }
+
+  .form-group {
+    font-size: 1em;
+  }
+}
