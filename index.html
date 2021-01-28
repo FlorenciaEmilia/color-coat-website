@@ -17,13 +17,16 @@
       src="https://kit.fontawesome.com/d0d624b013.js"
       crossorigin="anonymous"
     ></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
 
   <body>
     <div class="container-fluid px-5 py-2 w-auto">
       <!-- First Nav witch it will be sticky -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <a class="navbar-brand" href="#"
+        <a class="navbar-brand link" href="#"
           ><img src="./Pictures/color-coat.png" alt="" class="w-55"
         /></a>
         <button
@@ -38,27 +41,27 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse link" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto"></ul>
           <div class="my-2 my-lg-0">
             <button type="button" class="btn btn-warning m-2">
               <i class="fas fa-phone"></i> <strong>512-222-2222</strong>
             </button>
-            <button type="button" class="btn btn-danger m-2">
+            <a href="#estimate" type="button" class="btn btn-danger m-2">
               <strong>GET YOUR FREE ESTIMATE</strong>
-            </button>
+            </a>
           </div>
         </div>
       </nav>
 
       <!--Welcome page-->
-      <div class="jumbotron">
+      <div class="jumbotron left">
         <h1 class="display-4">The Best Quality For Your Projects</h1>
         <p class="lead">
-          Color Coat is the best option to optimize your project
+          Color Coat is the best painting company to optimize your project
         </p>
         <hr class="my-4" />
-        <a class="btn btn-danger btn-lg" href="#" role="button"
+        <a class="btn btn-danger btn-lg" href="#estimate" role="button"
           ><strong>GET YOUR FREE ESTIMATE</strong></a
         >
       </div>
@@ -87,7 +90,10 @@
           </h4>
         </div>
 
-        <div class="d-flex flex-column justify-content-center">
+        <div
+          class="d-flex flex-column justify-content-center"
+          data-aos="fade-left"
+        >
           <img
             src="./Pictures/rhondak-native-florida-folk-artist-_Yc7OtfFn-0-unsplash.jpg"
             alt=""
@@ -98,7 +104,12 @@
       </section>
 
       <!-- Reasons -->
-      <section id="reasons">
+      <section
+        id="reasons"
+        data-aos="fade-down"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+      >
         <h2 class="text-center my-5 display-4 text-info">Why Choose Us</h2>
         <div class="d-flex justify-content-center align-items-baseline my-5">
           <div class="text-center">
@@ -153,8 +164,13 @@
 
       <!-- Services -->
       <section id="services">
-        <h2 class="text-center display-4 py-4">Our Services</h2>
-        <div class="text-center d-flex justify-content-center">
+        <h2 class="text-center display-4 py-4" data-aos="zoom-in">
+          Our Services
+        </h2>
+        <div
+          class="text-center d-flex justify-content-center"
+          data-aos="zoom-in"
+        >
           <ul>
             <li>Wallpaper Removal</li>
             <li>Exterior Painting</li>
@@ -242,7 +258,11 @@
       </section>
 
       <!-- Work Demo -->
-      <section id="references">
+      <section
+        id="references"
+        data-aos="zoom-in-right"
+        data-aos-duration="1500"
+      >
         <h2 class="text-center display-4 text-info p-5">
           We Value Your Projects
         </h2>
@@ -295,7 +315,7 @@
       </section>
 
       <!-- Customer Reviews -->
-      <section id="reviews">
+      <section id="reviews" data-aos="fade-right">
         <h2 class="text-center display-4 text-info">Our Reviews</h2>
 
         <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -362,7 +382,8 @@
         </div>
       </section>
 
-      <section id="estimate">
+      <!-- Contact -->
+      <section id="estimate" data-aos="fade-up-left">
         <h2 class="text-center display-4 py-5">Get Your Free Estimate Today</h2>
         <div class="d-flex justify-content-center align-items-center">
           <div id="form">
@@ -406,7 +427,10 @@
       </section>
 
       <!-- Footer -->
-      <section class="d-flex justify-content-around py-3 bg-info text-light">
+      <section
+        class="d-flex justify-content-around py-3 bg-info text-light"
+        data-aos="fade-up-left"
+      >
         <div id="schedule">
           <h3>Hours</h3>
           <p><strong>Monday - Saturday</strong></p>
@@ -438,7 +462,7 @@
     </div>
     <!-- End of page -->
 
-    <script src="app.js"></script>
+    <!-- Bootstrap -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -454,5 +478,12 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

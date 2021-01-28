@@ -277,6 +277,12 @@ button[type="submit"]:hover {
     display: none;
   }
 
+  /* Reviews */
+  #reviews {
+    min-height: 60vh;
+    line-height: 1em;
+  }
+
   /* Estimate */
   #estimate {
     min-height: 70vh;
